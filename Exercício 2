@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+  int n[5], elemento[5], i, j, potencia[5]={1, 1, 1, 1, 1}, p;
+  for(i = 0; i < 5; i++){
+    do{
+      scanf("%d", &n[i]);
+      elemento[i] = n[i];
+      }while ((n[i]<-10) || (n[i]>10));
+    }
+  do{
+    scanf("%d", &p);
+    }while ((p<0) || (p>10));
+  for(i = 0; i<5; i++){
+    if(p==0) n[i] = 1;
+    for(j=1; j<=p; j++){
+      potencia[i] = potencia[i]*n[i];
+      }
+    if((elemento[i]<0) && (p%2 != 0)) n[i] = -n[i];
+    }
+  for(i=0; i<5; i++){
+    printf("%d\t", potencia[i]);
+  }
+  return 0;
+}
